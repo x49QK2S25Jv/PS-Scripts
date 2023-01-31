@@ -1,0 +1,1 @@
+Get-ADUser -Filter * -Properties Name,thumbnailPhoto,emailaddress,DistinguishedName | where {($_.thumbnailPhoto -eq $Null -and $_.EmailAddress -ne $Null)} | Select-Object Name,thumbnailPhoto,DistinguishedName | Sort-Object Name | Export-Csv -Path C:\Users\$Env:Username\Desktop\StaffNoPhoto.csv

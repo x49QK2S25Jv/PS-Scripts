@@ -1,0 +1,2 @@
+Write-Host "Please run against exchange on premise" -ForegroundColor Red
+Get-RemoteMailbox -ResultSize unlimited | Sort-Object Name | Select-Object Name,RemoteRoutingAddress | Export-Csv -Path C:\Users\$env:USERNAME\Desktop\RomoteRoutingAddress.csv
